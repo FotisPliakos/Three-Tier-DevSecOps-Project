@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Git Pulling') {
             steps {
-                git branch: 'master', url: 'https://github.com/FotisPliakos/Three-Tier-DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/FotisPliakos/Three-Tier-DevSecOps-Project.git'
             }
         }
         stage('Init') {
