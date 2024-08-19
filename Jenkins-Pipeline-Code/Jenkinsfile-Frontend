@@ -39,14 +39,14 @@ pipeline {
                 }
             }
         }
-        // stage('OWASP Dependency-Check Scan') {
-        //     steps {
-        //         dir('Application-Code/frontend') {
-        //             dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit', odcInstallation: 'DP-Check'
-        //             dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
-        //         }
-        //     }
-        // }
+        stage('OWASP Dependency-Check Scan') {
+            steps {
+                dir('Application-Code/frontend') {
+                    dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit', odcInstallation: 'DP-Check'
+                    dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+                }
+            }
+        }
         stage('Trivy File Scan') {
             steps {
                 dir('Application-Code/frontend') {
