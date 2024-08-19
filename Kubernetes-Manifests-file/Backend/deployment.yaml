@@ -24,7 +24,6 @@ spec:
       imagePullSecrets:
         - name: ecr-registry-secret
       containers:
-<<<<<<< HEAD
         - name: api
           image: 329905646086.dkr.ecr.us-east-1.amazonaws.com/backend:1
           imagePullPolicy: Always
