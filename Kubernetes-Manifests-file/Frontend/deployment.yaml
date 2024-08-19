@@ -6,7 +6,7 @@ metadata:
   labels:
     role: frontend
     env: demo
-spec: 
+spec:
   replicas: 1
   strategy:
     type: RollingUpdate
@@ -14,21 +14,21 @@ spec:
       maxSurge: 1
       maxUnavailable: 25%
   selector:
-    matchLabels: 
+    matchLabels:
       role: frontend
   template:
     metadata:
       labels:
         role: frontend
-    spec: 
+    spec:
       imagePullSecrets:
-      - name: ecr-registry-secret
+        - name: ecr-registry-secret
       containers:
-      - name: frontend
-        image: 407622020962.dkr.ecr.us-east-1.amazonaws.com/frontend:12
-        imagePullPolicy: Always
-        env:
-          - name: REACT_APP_BACKEND_URL
-            value: "http://amanpathakdevops.study/api/tasks"
-        ports:
-        - containerPort: 3000
+        - name: frontend
+          image: 329905646086.dkr.ecr.us-east-1.amazonaws.com/frontend:12
+          imagePullPolicy: Always
+          env:
+            - name: REACT_APP_BACKEND_URL
+              value: "http://amanpathakdevops.study/api/tasks"
+          ports:
+            - containerPort: 3000
